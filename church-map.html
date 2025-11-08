@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Utah County Churches Map</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <style>#map{height:100vh}</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+// Denomination -> color mapping (adjust as needed)
+// Added more granular keys to match values found in the GeoJSON
+const denomColors = {
+  "LDS": "#9c27b0",
+  "Catholic": "#d32f2f",
+  "Baptist": "#1976d2",
+  "Methodist": "#ff9800",
+  "Pentecostal": "#f44336",
+  "Orthodox": "#3f51b5",
+  "Non-denominational": "#4caf50",
+  "Presbyterian": "#00796b",
+  "Protestant": "#388e3c",
+  "Evangelical": "#8bc34a",
+  "Temple": "#6a1b9a",
+  "Other": "#607d8b"
+};
+
+const map = L.map('map').setView([40.3, -111.7], 10); // center Utah County
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18, attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+// helper: create a small colored SVG icon as a data URI
+// Create a small colored SVG icon as a data URI. Accepts an optional shape:
+// 'circle' (default) or 'square'.
+function createColoredIcon(color, shape = 'circle'){
+  let svgStr;
+  // Use 25x25px icons so markers remain clearly visible at all zoom levels.
+  if(shape === 'square'){
+    // small rounded square
+    svgStr = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><rect x="3" y="3" width="19" height="19" rx="4" ry="4" fill="${color}" stroke="#222" stroke-width="2"/></svg>`;
+  } else {
+    // circle
+    svgStr = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><circle cx="12.5" cy="11" r="9" fill="${color}" stroke="#222" stroke-width="2"/></svg>`;
+  }
+  const svg = encodeURIComponent(svgStr);
+  const url = `data:image/svg+xml;utf8,${svg}`;
+  // iconSize is in pixels and keeps it constant across zoom levels
+  return L.icon({iconUrl: url, iconSize: [25,25], iconAnchor: [12,12], popupAnchor: [0,-10]});
+}
+
+// Normalise raw denomination values to one of our denomColors keys
+function denomKeyFromRaw(raw){
+  if(!raw) return 'Other';
+  const s = String(raw).toLowerCase();
+  if(s.includes('catholic') || s.includes('roman')) return 'Catholic';
+  if(s.includes('mormon') || s.includes('latter') || s.includes('lds')) return 'LDS';
+  if(s.includes('baptist')) return 'Baptist';
+  if(s.includes('methodist')) return 'Methodist';
+  if(s.includes('pentec')) return 'Pentecostal';
+  if(s.includes('orthodox')) return 'Orthodox';
+  if(s.includes('presbyterian')) return 'Presbyterian';
+  if(s.includes('protestant')) return 'Protestant';
+  if(s.includes('evangel')) return 'Evangelical';
+  if(s.includes('temple')) return 'Temple';
+  if(s.includes('non') || s.includes('nondenom') || s.includes('non-denom')) return 'Non-denominational';
+  return 'Other';
+}
+
+// load GeoJSON and add to a marker cluster group
+fetch('churches.geojson').then(r=>r.json()).then(data=>{
+  const markers = L.markerClusterGroup();
+  // keep arrays of markers per denomination so we can toggle visibility
+  const denomMarkers = {};
+  for (const k of Object.keys(denomColors)) denomMarkers[k] = [];
+
+  const geo = L.geoJSON(data, {
+    pointToLayer: function(feature, latlng){
+      const p = feature.properties || {};
+      // our generator flattens denomination into 'place_of_worship.denomination' sometimes
+      const rawDenom = p['place_of_worship.denomination'] || p.denomination || p['denomination'] || '';
+      // detect building type for special shapes (e.g., temples)
+      const rawBuilding = p['building'] || (feature.properties && feature.properties['building']) || '';
+      const buildingType = rawBuilding && typeof rawBuilding === 'object' ? rawBuilding.type || '' : rawBuilding || '';
+      const key = denomKeyFromRaw(rawDenom);
+      const color = denomColors[key] || denomColors['Other'];
+      const shape = (String(buildingType).toLowerCase().includes('temple') || String(rawDenom).toLowerCase().includes('temple')) ? 'square' : 'circle';
+      const marker = L.marker(latlng, {icon: createColoredIcon(color, shape)});
+      // track marker by denomination for toggling
+      if (!denomMarkers[key]) denomMarkers[key] = [];
+      denomMarkers[key].push(marker);
+      return marker;
+    },
+    onEachFeature: function(feature, layer){
+      const p = feature.properties || {};
+      const name = p.name || '';
+      const addr = p.formatted || p.address_line2 || p.address_line1 || '';
+      const phone = p.phone || p.contact || '';
+      const website = p.website ? `<a href="${p.website}" target="_blank">website</a>` : '';
+      const rawDenom = p['place_of_worship.denomination'] || p.denomination || p['denomination'] || '';
+      const denom = denomKeyFromRaw(rawDenom);
+      const popup = `<strong>${name}</strong><br>${addr}${phone?'<br>Phone: '+phone:''}${website?'<br>'+website:''}<br><em>${denom}</em>`;
+      layer.bindPopup(popup);
+    }
+  });
+
+  markers.addLayer(geo);
+  map.addLayer(markers);
+  addLegend(markers, denomMarkers);
+});
+
+// Simple legend
+function addLegend(markers, denomMarkers){
+  const legend = L.control({position:'topright'});
+  legend.onAdd = function() {
+    const div = L.DomUtil.create('div','info legend');
+    div.style.maxHeight = '60vh';
+    div.style.overflowY = 'auto';
+    for (const k of Object.keys(denomColors)) {
+      const color = denomColors[k];
+      const item = document.createElement('div');
+      item.className = 'legend-item';
+      item.style.cursor = 'pointer';
+      item.style.marginBottom = '6px';
+      item.innerHTML = `<i data-key="${k}" style="background:${color};width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #222;vertical-align:middle"></i><span style="vertical-align:middle">${k}</span>`;
+      // default visible
+      item.dataset.visible = '1';
+
+      // click toggles visibility
+      L.DomEvent.on(item, 'click', function(e){
+        const key = this.querySelector('i').dataset.key;
+        const visible = this.dataset.visible === '1';
+        if (visible){
+          // hide: remove each marker from cluster group
+          const list = denomMarkers[key] || [];
+          for (const m of list) markers.removeLayer(m);
+          this.dataset.visible = '0';
+          this.style.opacity = '0.45';
+        } else {
+          const list = denomMarkers[key] || [];
+          for (const m of list) markers.addLayer(m);
+          this.dataset.visible = '1';
+          this.style.opacity = '1';
+        }
+        // update visible count after toggling
+        if (typeof updateVisibleCount === 'function') updateVisibleCount();
+      });
+
+      L.DomEvent.disableClickPropagation(item);
+      div.appendChild(item);
+    }
+    // footer: visible count
+    const footer = document.createElement('div');
+    footer.id = 'legend-count';
+    footer.style.marginTop = '8px';
+    footer.style.fontWeight = 'bold';
+    footer.innerText = 'Visible: 0';
+    div.appendChild(footer);
+
+    // update function to reflect number of markers currently in the cluster group
+    function updateVisibleCount(){
+      try{
+        if (!markers || typeof markers.getLayers !== 'function') {
+          footer.innerText = 'Visible: 0';
+          return;
+        }
+        const layers = markers.getLayers();
+        // count only markers that are inside the current map bounds
+        const bounds = map && typeof map.getBounds === 'function' ? map.getBounds() : null;
+        let count = 0;
+        for (const m of layers){
+          try{
+            if (!bounds) { count++; continue; }
+            const latlng = (m && typeof m.getLatLng === 'function') ? m.getLatLng() : null;
+            if (latlng && bounds.contains(latlng)) count++;
+          }catch(err){ /* ignore individual marker errors */ }
+        }
+        footer.innerText = 'Visible: ' + count;
+      }catch(e){
+        footer.innerText = 'Visible: —';
+      }
+    }
+
+    // call once initially
+    setTimeout(updateVisibleCount, 100);
+
+    // update when toggles occur by listening to clicks (we already call updateVisibleCount there)
+    // also update on map move/zoom in case markers change
+    map.on('moveend zoomend', updateVisibleCount);
+
+    return div;
+  };
+  legend.addTo(map);
+}
+
+// small CSS tweak for legend items
+const style = document.createElement('style');
+style.innerHTML = `.legend .legend-item{font-family:Arial,Helvetica,sans-serif;font-size:13px}`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
+
