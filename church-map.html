@@ -39,20 +39,18 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // helper: create a small colored SVG icon as a data URI
 // Create a small colored SVG icon as a data URI. Accepts an optional shape:
 // 'circle' (default) or 'square'.
-function createColoredIcon(color, shape = 'circle'){
+function createColoredIcon(color, shape = 'circle', catKey){
   let svgStr;
-  // Use 25x25px icons so markers remain clearly visible at all zoom levels.
   if(shape === 'square'){
-    // small rounded square
     svgStr = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><rect x="3" y="3" width="19" height="19" rx="4" ry="4" fill="${color}" stroke="#222" stroke-width="2"/></svg>`;
   } else {
-    // circle
     svgStr = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><circle cx="12.5" cy="11" r="9" fill="${color}" stroke="#222" stroke-width="2"/></svg>`;
   }
   const svg = encodeURIComponent(svgStr);
   const url = `data:image/svg+xml;utf8,${svg}`;
-  // iconSize is in pixels and keeps it constant across zoom levels
-  return L.icon({iconUrl: url, iconSize: [25,25], iconAnchor: [12,12], popupAnchor: [0,-10]});
+  const opts = {iconUrl: url, iconSize: [25,25], iconAnchor: [12,12], popupAnchor: [0,-10]};
+  if (catKey) opts.catKey = catKey;
+  return L.icon(opts);
 }
 
 // Normalise raw denomination values to one of our denomColors keys
@@ -105,17 +103,14 @@ fetch('churches.geojson').then(r=>r.json()).then(data=>{
   const geo = L.geoJSON(data, {
     pointToLayer: function(feature, latlng){
       const p = feature.properties || {};
-        const name = p.name || '';
-      // our generator flattens denomination into 'place_of_worship.denomination' sometimes
+      const name = p.name || '';
       const rawDenom = p['place_of_worship.denomination'] || p.denomination || p['denomination'] || '';
-      // detect building type for special shapes (e.g., temples)
       const rawBuilding = p['building'] || (feature.properties && feature.properties['building']) || '';
       const buildingType = rawBuilding && typeof rawBuilding === 'object' ? rawBuilding.type || '' : rawBuilding || '';
       const key = denomKeyFromRaw(rawDenom, name);
       const color = denomColors[key] || denomColors['Other'];
       const shape = (String(buildingType).toLowerCase().includes('temple') || String(rawDenom).toLowerCase().includes('temple')) ? 'square' : 'circle';
-      const marker = L.marker(latlng, {icon: createColoredIcon(color, shape)});
-      // track marker by denomination for toggling
+      const marker = L.marker(latlng, {icon: createColoredIcon(color, shape, key)});
       if (!denomMarkers[key]) denomMarkers[key] = [];
       denomMarkers[key].push(marker);
       return marker;
@@ -265,12 +260,11 @@ function addLegend(markers, denomMarkers){
     div.style.overflowY = 'auto';
     for (const k of Object.keys(denomColors)) {
       const color = denomColors[k];
-      const count = denomMarkers[k] ? denomMarkers[k].length : 0;
       const item = document.createElement('div');
       item.className = 'legend-item';
       item.style.cursor = 'pointer';
       item.style.marginBottom = '6px';
-      item.innerHTML = `<i data-key="${k}" style="background:${color};width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #222;vertical-align:middle"></i><span style="vertical-align:middle">${k}</span> <span style="color:#444;font-size:12px;margin-left:4px">(${count})</span>`;
+      item.innerHTML = `<i data-key="${k}" style="background:${color};width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #222;vertical-align:middle"></i><span style="vertical-align:middle">${k}</span> <span id="legend-count-${k}" style="color:#444;font-size:12px;margin-left:4px">(0)</span>`;
       // default visible
       item.dataset.visible = '1';
 
@@ -302,30 +296,44 @@ function addLegend(markers, denomMarkers){
     footer.id = 'legend-count';
     footer.style.marginTop = '8px';
     footer.style.fontWeight = 'bold';
-    footer.innerText = 'Visible: 0';
+    footer.innerHTML = 'Visible: <span id="legend-total">0</span>';
     div.appendChild(footer);
 
-    // update function to reflect number of markers currently in the cluster group
+    // update function to reflect number of markers currently in the cluster group and per category
     function updateVisibleCount(){
       try{
         if (!markers || typeof markers.getLayers !== 'function') {
-          footer.innerText = 'Visible: 0';
+          document.getElementById('legend-total').innerText = '0';
+          for (const k of Object.keys(denomColors)) {
+            document.getElementById(`legend-count-${k}`).innerText = '(0)';
+          }
           return;
         }
         const layers = markers.getLayers();
-        // count only markers that are inside the current map bounds
         const bounds = map && typeof map.getBounds === 'function' ? map.getBounds() : null;
-        let count = 0;
+        let total = 0;
+        let perCat = {};
         for (const m of layers){
           try{
-            if (!bounds) { count++; continue; }
+            if (!bounds) { total++; continue; }
             const latlng = (m && typeof m.getLatLng === 'function') ? m.getLatLng() : null;
-            if (latlng && bounds.contains(latlng)) count++;
+            if (latlng && bounds.contains(latlng)) {
+              total++;
+              // get category from marker icon
+              const cat = m.options.icon && m.options.icon.options && m.options.icon.options.catKey;
+              if (cat) perCat[cat] = (perCat[cat]||0)+1;
+            }
           }catch(err){ /* ignore individual marker errors */ }
         }
-        footer.innerText = 'Visible: ' + count;
+        document.getElementById('legend-total').innerText = total;
+        for (const k of Object.keys(denomColors)) {
+          document.getElementById(`legend-count-${k}`).innerText = `(${perCat[k]||0})`;
+        }
       }catch(e){
-        footer.innerText = 'Visible: —';
+        document.getElementById('legend-total').innerText = '—';
+        for (const k of Object.keys(denomColors)) {
+          document.getElementById(`legend-count-${k}`).innerText = '(—)';
+        }
       }
     }
 
