@@ -1,0 +1,1584 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Provo Utah Rock Canyon Temple",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Provo",
+        "postcode": "84604",
+        "district": "BYU",
+        "street": "Temple Hill Drive",
+        "housenumber": "2200",
+        "iso3166_2": "US-UT",
+        "lon": -111.63977041916164,
+        "lat": 40.263650350000006,
+        "state_code": "UT",
+        "formatted": "Provo Utah Rock Canyon Temple, 2200 Temple Hill Drive, Provo, UT 84604, United States of America",
+        "address_line1": "Provo Utah Rock Canyon Temple",
+        "address_line2": "2200 Temple Hill Drive, Provo, UT 84604, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.contact",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Provo Utah Rock Canyon Temple",
+            "phone": "+18013755775",
+            "osm_id": 61439103,
+            "amenity": "place_of_worship",
+            "website": "https://www.churchofjesuschrist.org/temples/details/provo-utah-rock-canyon-temple",
+            "building": "construction",
+            "operator": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_type": "w",
+            "religion": "christian",
+            "wikidata": "Q1507167",
+            "addr:city": "Provo",
+            "wikipedia": "en:Provo Utah Temple",
+            "addr:state": "UT",
+            "addr:street": "Temple Hill Drive",
+            "construction": "temple",
+            "denomination": "latter_day_saints",
+            "addr:postcode": 84604,
+            "addr:housenumber": 2200,
+            "operator:wikidata": "Q42504"
+          }
+        },
+        "website": "https://www.churchofjesuschrist.org/temples/details/provo-utah-rock-canyon-temple",
+        "operator": "The Church of Jesus Christ of Latter-day Saints",
+        "operator_details": {
+          "wikidata": "Q42504"
+        },
+        "contact": {
+          "phone": "+18013755775"
+        },
+        "wiki_and_media": {
+          "wikidata": "Q1507167",
+          "wikipedia": "en:Provo Utah Temple"
+        },
+        "building": {
+          "type": "construction"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "latter_day_saints"
+        },
+        "place_id": "51d6cfa0fff1e85bc0595d10704bbf214440f00102f9017f7ca9030000000092031d50726f766f205574616820526f636b2043616e796f6e2054656d706c65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.63977041916164,
+          40.26365035030242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Springville Community Presbyterian Church",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Springville",
+        "postcode": "84663",
+        "street": "South 200 East Street",
+        "housenumber": "245",
+        "iso3166_2": "US-UT",
+        "lon": -111.6065555,
+        "lat": 40.1631802,
+        "state_code": "UT",
+        "formatted": "Springville Community Presbyterian Church, 245 South 200 East Street, Springville, UT 84663, United States of America",
+        "address_line1": "Springville Community Presbyterian Church",
+        "address_line2": "245 South 200 East Street, Springville, UT 84663, United States of America",
+        "categories": [
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.contact",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Springville Community Presbyterian Church",
+            "phone": "+1 801-489-4390",
+            "osm_id": 356683463,
+            "amenity": "place_of_worship",
+            "website": "https://www.springvillechurch.org/",
+            "osm_type": "n",
+            "religion": "christian",
+            "wikidata": "Q7581251",
+            "addr:city": "Springville",
+            "wikipedia": "en:Springville Community Presbyterian Church",
+            "addr:street": "South 200 East Street",
+            "denomination": "presbyterian",
+            "addr:postcode": 84663,
+            "addr:housenumber": 245
+          }
+        },
+        "website": "https://www.springvillechurch.org/",
+        "contact": {
+          "phone": "+1 801-489-4390"
+        },
+        "wiki_and_media": {
+          "wikidata": "Q7581251",
+          "wikipedia": "en:Springville Community Presbyterian Church"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "presbyterian"
+        },
+        "place_id": "515eed28ced1e65bc05963ccbb16e3144440f00103f901c78e421500000000920329537072696e6776696c6c6520436f6d6d756e6974792050726573627974657269616e20436875726368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.60655549999998,
+          40.16318020028918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Saint Francis of Assisi Catholic Church",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Orem",
+        "postcode": "84097",
+        "street": "East 500 North",
+        "housenumber": "65",
+        "iso3166_2": "US-UT",
+        "lon": -111.69433218057739,
+        "lat": 40.30726835,
+        "state_code": "UT",
+        "formatted": "Saint Francis of Assisi Catholic Church, 65 East 500 North, Orem, UT 84097, United States of America",
+        "address_line1": "Saint Francis of Assisi Catholic Church",
+        "address_line2": "65 East 500 North, Orem, UT 84097, United States of America",
+        "categories": [
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.contact",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "fax": "+1 801-221-0759",
+            "name": "Saint Francis of Assisi Catholic Church",
+            "image": "https://commons.wikimedia.org/wiki/File:Saint_Francis_of_Assisi_Catholic_Church_in_Orem_Utah_3.jpg",
+            "phone": "+1 801-221-0750",
+            "osm_id": 468753903,
+            "amenity": "place_of_worship",
+            "diocese": "Salt Lake City",
+            "image_1": "https://commons.wikimedia.org/wiki/File:Saint_Francis_of_Assisi_Catholic_Church_in_Orem_Utah_2.jpg",
+            "image_2": "https://commons.wikimedia.org/wiki/File:Saint_Francis_of_Assisi_Catholic_Church_in_Orem_Utah_1.jpg",
+            "website": "https://www.oremstfrancis.org/",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "Orem",
+            "addr:state": "UT",
+            "check_date": "2023-07-21",
+            "short_name": "St Francis of Assisi",
+            "addr:street": "East 500 North",
+            "description": "Also serves Provo and Orem Hospitals",
+            "addr:country": "US",
+            "denomination": "roman_catholic",
+            "addr:housenumber": 65
+          }
+        },
+        "website": "https://www.oremstfrancis.org/",
+        "description": "Also serves Provo and Orem Hospitals",
+        "name_other": {
+          "short_name": "St Francis of Assisi"
+        },
+        "contact": {
+          "phone": "+1 801-221-0750",
+          "fax": "+1 801-221-0759"
+        },
+        "wiki_and_media": {
+          "image": "https://commons.wikimedia.org/wiki/File:Saint_Francis_of_Assisi_Catholic_Church_in_Orem_Utah_3.jpg"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "roman_catholic"
+        },
+        "place_id": "51fa083ef06fec5bc059a6d5bd9154274440f00102f901ef9df01b000000009203275361696e74204672616e636973206f662041737369736920436174686f6c696320436875726368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.69433218057739,
+          40.30726835030809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Andres Catholic Church",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Payson",
+        "postcode": "84651",
+        "street": "300 East",
+        "housenumber": "315",
+        "iso3166_2": "US-UT",
+        "lon": -111.72799179683946,
+        "lat": 40.0448592,
+        "state_code": "UT",
+        "formatted": "San Andres Catholic Church, 315 300 East, Payson, UT 84651, United States of America",
+        "address_line1": "San Andres Catholic Church",
+        "address_line2": "315 300 East, Payson, UT 84651, United States of America",
+        "categories": [
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.contact",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "San Andres Catholic Church",
+            "image": "https://commons.wikimedia.org/wiki/File:San_Andres_Catholic_Church_in_Payson_Utah.jpg",
+            "phone": "+1 801-465-4782",
+            "osm_id": 736843658,
+            "amenity": "place_of_worship",
+            "diocese": "Salt Lake City",
+            "website": "https://www.dioslc.org",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "Payson",
+            "addr:state": "UT",
+            "addr:street": "East 100 North Street",
+            "description": "Mail may also be sent to: PO Box 387; Payson, UT 84651|Also serves Payson Hospitals",
+            "addr:country": "US",
+            "denomination": "roman_catholic",
+            "addr:postcode": 84651,
+            "addr:housenumber": 315
+          }
+        },
+        "website": "https://www.dioslc.org",
+        "description": "Mail may also be sent to: PO Box 387; Payson, UT 84651|Also serves Payson Hospitals",
+        "contact": {
+          "phone": "+1 801-465-4782"
+        },
+        "wiki_and_media": {
+          "image": "https://commons.wikimedia.org/wiki/File:San_Andres_Catholic_Church_in_Payson_Utah.jpg"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "roman_catholic"
+        },
+        "place_id": "51a1cbe76a97ee5bc059a60c3ff2bd054440f00102f9018a57eb2b0000000092031a53616e20416e6472657320436174686f6c696320436875726368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.72799179683945,
+          40.044859200273365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Saint Peter Catholic Church",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "American Fork",
+        "postcode": "84003",
+        "street": "Caveman Boulevard",
+        "housenumber": "634",
+        "iso3166_2": "US-UT",
+        "lon": -111.7806556462616,
+        "lat": 40.389786099999995,
+        "state_code": "UT",
+        "formatted": "Saint Peter Catholic Church, 634 Caveman Boulevard, American Fork, UT 84003, United States of America",
+        "address_line1": "Saint Peter Catholic Church",
+        "address_line2": "634 Caveman Boulevard, American Fork, UT 84003, United States of America",
+        "categories": [
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.contact",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "fax": "+1 801-756-7768",
+            "name": "Saint Peter Catholic Church",
+            "image": "https://commons.wikimedia.org/wiki/File:Parish_Hall_of_Saint_Peter_Catholic_Church_in_American_Fork_Utah.jpg",
+            "phone": "+1 801-756-7771",
+            "osm_id": 737457535,
+            "amenity": "place_of_worship",
+            "diocese": "Salt Lake City",
+            "image_1": "https://commons.wikimedia.org/wiki/File:Saint_Peter_Catholic_Church_in_American_Fork_Utah.jpg",
+            "image_2": "https://commons.wikimedia.org/wiki/File:Sign_for_Saint_Peter_Catholic_Church_in_American_Fork_Utah.jpg",
+            "website": "https://www.dioslc.org/",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "American Fork",
+            "addr:state": "UT",
+            "addr:street": "North 600 East",
+            "addr:country": "US",
+            "denomination": "roman_catholic",
+            "addr:housenumber": 634
+          }
+        },
+        "website": "https://www.dioslc.org/",
+        "contact": {
+          "phone": "+1 801-756-7771",
+          "fax": "+1 801-756-7768"
+        },
+        "wiki_and_media": {
+          "image": "https://commons.wikimedia.org/wiki/File:Parish_Hall_of_Saint_Peter_Catholic_Church_in_American_Fork_Utah.jpg"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "roman_catholic"
+        },
+        "place_id": "5166881943f6f15bc059f2a6cc82e4314440f00102f9017fb5f42b0000000092031b5361696e7420506574657220436174686f6c696320436875726368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.78065564626158,
+          40.389786100318716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mount Timpanogos Utah Temple",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "American Fork",
+        "postcode": "84003",
+        "street": "900 East",
+        "housenumber": "742 North",
+        "iso3166_2": "US-UT",
+        "lon": -111.77059389181326,
+        "lat": 40.392875200000006,
+        "state_code": "UT",
+        "formatted": "Mount Timpanogos Utah Temple, 742 North 900 East, American Fork, UT 84003, United States of America",
+        "address_line1": "Mount Timpanogos Utah Temple",
+        "address_line2": "742 North 900 East, American Fork, UT 84003, United States of America",
+        "categories": [
+          "access_limited",
+          "access_limited.private",
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Mount Timpanogos Utah Temple",
+            "access": "private",
+            "osm_id": 80397199,
+            "amenity": "place_of_worship",
+            "website": "https://www.churchofjesuschrist.org/temples/details/mount-timpanogos-utah-temple",
+            "building": "temple",
+            "operator": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_type": "w",
+            "religion": "christian",
+            "wikidata": "Q3293262",
+            "addr:city": "American Fork",
+            "wikipedia": "en:Mount Timpanogos Utah Temple",
+            "addr:state": "UT",
+            "addr:street": "North 900 East",
+            "denomination": "mormon",
+            "addr:housenumber": "742 North",
+            "operator:wikidata": "Q42504"
+          }
+        },
+        "website": "https://www.churchofjesuschrist.org/temples/details/mount-timpanogos-utah-temple",
+        "operator": "The Church of Jesus Christ of Latter-day Saints",
+        "operator_details": {
+          "wikidata": "Q42504"
+        },
+        "wiki_and_media": {
+          "wikidata": "Q3293262",
+          "wikipedia": "en:Mount Timpanogos Utah Temple"
+        },
+        "restrictions": {
+          "access": "private"
+        },
+        "building": {
+          "type": "temple"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "mormon"
+        },
+        "place_id": "5175f50a6951f15bc059da630cbc49324440f00102f9018fc3ca040000000092031c4d6f756e742054696d70616e6f676f7320557461682054656d706c65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.77059389181325,
+          40.392875200319125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Provo City Center Temple",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Provo",
+        "postcode": "84601",
+        "district": "Downtown",
+        "street": "South University Avenue",
+        "housenumber": "50",
+        "iso3166_2": "US-UT",
+        "lon": -111.6593084,
+        "lat": 40.232639899999995,
+        "state_code": "UT",
+        "formatted": "Provo City Center Temple, 50 South University Avenue, Provo, UT 84601, United States of America",
+        "address_line1": "Provo City Center Temple",
+        "address_line2": "50 South University Avenue, Provo, UT 84601, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.building",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Provo City Center Temple",
+            "osm_id": 423053845,
+            "amenity": "place_of_worship",
+            "website": "https://www.churchofjesuschrist.org/temples/details/provo-city-center-temple",
+            "building": "temple",
+            "osm_type": "w",
+            "religion": "christian",
+            "wikidata": "Q7252776",
+            "addr:city": "Provo",
+            "wikipedia": "en:Provo City Center Temple",
+            "addr:state": "UT",
+            "addr:street": "South University Avenue",
+            "denomination": "latter_day_saints",
+            "addr:postcode": 84601,
+            "building:levels": 3,
+            "addr:housenumber": 50
+          }
+        },
+        "website": "https://www.churchofjesuschrist.org/temples/details/provo-city-center-temple",
+        "wiki_and_media": {
+          "wikidata": "Q7252776",
+          "wikipedia": "en:Provo City Center Temple"
+        },
+        "building": {
+          "levels": 3,
+          "type": "temple"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "latter_day_saints"
+        },
+        "place_id": "5198fedb1b32ea5bc05958c3ed24c71d4440f00102f901154a37190000000092031850726f766f20436974792043656e7465722054656d706c65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.65930839999999,
+          40.23263990029835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Isidro Catholic Mission",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Elberta",
+        "postcode": "84626",
+        "street": "15200 South",
+        "housenumber": "12972",
+        "iso3166_2": "US-UT",
+        "lon": -111.9603141176078,
+        "lat": 39.95293425,
+        "state_code": "UT",
+        "formatted": "San Isidro Catholic Mission, 12972 15200 South, Elberta, UT 84626, United States of America",
+        "address_line1": "San Isidro Catholic Mission",
+        "address_line2": "12972 15200 South, Elberta, UT 84626, United States of America",
+        "categories": [
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.contact",
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "San Isidro Catholic Mission",
+            "phone": "+1 801-465-4782",
+            "osm_id": 742760611,
+            "amenity": "place_of_worship",
+            "website": "https://www.dioslc.org",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "Elberta",
+            "addr:state": "UT",
+            "addr:street": "West 15200 South",
+            "addr:country": "US",
+            "denomination": "roman_catholic",
+            "addr:postcode": 84626,
+            "addr:street_1": "West Highway 6",
+            "addr:housenumber": 12972
+          }
+        },
+        "website": "https://www.dioslc.org",
+        "contact": {
+          "phone": "+1 801-465-4782"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "roman_catholic"
+        },
+        "place_id": "51ce4058c975fd5bc059f10de0bff9f94340f00102f901a3a0452c0000000092031b53616e2049736964726f20436174686f6c6963204d697373696f6e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9603141176078,
+          39.95293425026092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Lehi",
+        "postcode": "84043",
+        "street": "West 900 North",
+        "housenumber": "1998",
+        "iso3166_2": "US-UT",
+        "lon": -111.88349388129015,
+        "lat": 40.39936735,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, 1998 West 900 North, Lehi, UT 84043, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "1998 West 900 North, Lehi, UT 84043, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "internet_access",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity",
+          "wheelchair",
+          "wheelchair.yes"
+        ],
+        "details": [
+          "details",
+          "details.contact",
+          "details.facilities",
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "phone": "+18018993768",
+            "osm_id": 968961466,
+            "amenity": "place_of_worship",
+            "website": "https://local.churchofjesuschrist.org/en/us/ut/lehi/1998-west-900-north?y_source=1_NjcwODMzODAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+            "building": "yes",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "Lehi",
+            "addr:state": "Utah",
+            "wheelchair": "yes",
+            "addr:street": "West 900 North",
+            "baby_feeding": "room",
+            "denomination": "latter_day_saints",
+            "addr:postcode": 84043,
+            "service_times": "Su 09:00",
+            "internet_access": "wlan",
+            "addr:housenumber": 1998,
+            "air_conditioning": "yes"
+          }
+        },
+        "website": "https://local.churchofjesuschrist.org/en/us/ut/lehi/1998-west-900-north?y_source=1_NjcwODMzODAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+        "contact": {
+          "phone": "+18018993768"
+        },
+        "facilities": {
+          "internet_access": true,
+          "wheelchair": true,
+          "air_conditioning": true
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "latter_day_saints"
+        },
+        "place_id": "51dc96eb298bf85bc059705b26781e334440f00102f901ba2dc1390000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.88349388129012,
+          40.39936735031995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Saratoga Springs Utah Temple",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Saratoga Springs",
+        "postcode": "84045",
+        "street": "South Ensign Drive",
+        "housenumber": "987",
+        "iso3166_2": "US-UT",
+        "lon": -111.93271415116325,
+        "lat": 40.34423125,
+        "state_code": "UT",
+        "formatted": "Saratoga Springs Utah Temple, 987 South Ensign Drive, Saratoga Springs, UT 84045, United States of America",
+        "address_line1": "Saratoga Springs Utah Temple",
+        "address_line2": "987 South Ensign Drive, Saratoga Springs, UT 84045, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Saratoga Springs Utah Temple",
+            "osm_id": 1039682641,
+            "amenity": "place_of_worship",
+            "website": "https://www.churchofjesuschrist.org/temples/details/saratoga-springs-utah-temple",
+            "building": "temple",
+            "operator": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_type": "w",
+            "religion": "christian",
+            "wikidata": "Q54953374",
+            "addr:city": "Saratoga Springs",
+            "wikipedia": "en:Saratoga Springs Utah Temple",
+            "addr:state": "UT",
+            "addr:street": "South Ensign Drive",
+            "denomination": "latter_day_saints",
+            "addr:postcode": 84045,
+            "addr:housenumber": 987,
+            "operator:wikidata": "Q42504"
+          }
+        },
+        "website": "https://www.churchofjesuschrist.org/temples/details/saratoga-springs-utah-temple",
+        "operator": "The Church of Jesus Christ of Latter-day Saints",
+        "operator_details": {
+          "wikidata": "Q42504"
+        },
+        "wiki_and_media": {
+          "wikidata": "Q54953374",
+          "wikipedia": "en:Saratoga Springs Utah Temple"
+        },
+        "building": {
+          "type": "temple"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "latter_day_saints"
+        },
+        "place_id": "51cef0b196b1fb5bc059702d05c50f2c4440f00102f901514cf83d0000000092031c53617261746f676120537072696e677320557461682054656d706c65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.93271415116325,
+          40.34423125031287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "American Fork Presbyterian Church",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "American Fork",
+        "postcode": "84003",
+        "street": "100 East",
+        "housenumber": "75",
+        "iso3166_2": "US-UT",
+        "lon": -111.7963332059243,
+        "lat": 40.3781642,
+        "state_code": "UT",
+        "formatted": "American Fork Presbyterian Church, 75 100 East, American Fork, UT 84003, United States of America",
+        "address_line1": "American Fork Presbyterian Church",
+        "address_line2": "75 100 East, American Fork, UT 84003, United States of America",
+        "categories": [
+          "building",
+          "building.historic",
+          "building.place_of_worship",
+          "heritage",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity",
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.place_of_worship",
+          "tourism.sights.place_of_worship.church"
+        ],
+        "details": [
+          "details",
+          "details.building",
+          "details.contact",
+          "details.heritage",
+          "details.historic",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "ele": 1405,
+            "name": "American Fork Presbyterian Church",
+            "osm_id": 1270456047,
+            "amenity": "place_of_worship",
+            "building": "church",
+            "heritage": 2,
+            "historic": "heritage",
+            "osm_type": "w",
+            "ref:nrhp": 80003975,
+            "religion": "christian",
+            "wikidata": "Q4743842",
+            "addr:city": "American Fork",
+            "wikipedia": "en:American Fork Presbyterian Church",
+            "addr:state": "UT",
+            "start_date": 1879,
+            "addr:street": "North 100 East",
+            "denomination": "presbyterian",
+            "heritage:ref": 80003975,
+            "addr:postcode": 84003,
+            "contact:email": "churchamforkpres@gmail.com",
+            "contact:phone": "+1 385-219-7096",
+            "nrhp:criteria": "(A)",
+            "contact:website": "https://www.americanforkpres.org",
+            "addr:housenumber": 75,
+            "heritage:website": "https://npgallery.nps.gov/AssetDetail/NRIS/80003975",
+            "heritage:operator": "nrhp",
+            "building:architecture": "gothic_revival",
+            "nrhp:inscription_date": "1980-05-23"
+          }
+        },
+        "website": "https://www.americanforkpres.org",
+        "ref_other": {
+          "nrhp": 80003975
+        },
+        "ele": 1405,
+        "contact": {
+          "phone": "+1 385-219-7096",
+          "email": "churchamforkpres@gmail.com"
+        },
+        "wiki_and_media": {
+          "wikidata": "Q4743842",
+          "wikipedia": "en:American Fork Presbyterian Church"
+        },
+        "historic": {
+          "type": "heritage",
+          "start_date": 1879
+        },
+        "heritage": {
+          "level": 2,
+          "operator": "nrhp",
+          "website": "https://npgallery.nps.gov/AssetDetail/NRIS/80003975",
+          "ref": 80003975,
+          "inscription_date": "1980-05-23"
+        },
+        "building": {
+          "type": "church",
+          "start_date": 1879,
+          "architecture": "gothic_revival"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "presbyterian"
+        },
+        "place_id": "517a0a8d1ff7f25bc059b5703caf67304440f00102f901ef9eb94b00000000920321416d65726963616e20466f726b2050726573627974657269616e20436875726368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7963332059243,
+          40.37816420031724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Lehi",
+        "postcode": "84043",
+        "street": "West 1500 North",
+        "housenumber": "2261",
+        "iso3166_2": "US-UT",
+        "lon": -111.88566510103595,
+        "lat": 40.405686849999995,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, 2261 West 1500 North, Lehi, UT 84043, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "2261 West 1500 North, Lehi, UT 84043, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "internet_access",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.contact",
+          "details.facilities",
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "phone": "+18018993768",
+            "osm_id": 1286004111,
+            "amenity": "place_of_worship",
+            "website": "https://local.churchofjesuschrist.org/en/us/ut/lehi/2261-west-1500-north?utm_source=gmb&utm_medium=yext&y_source=1_NjcwOTA4NzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+            "building": "yes",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "Lehi",
+            "addr:state": "Utah",
+            "addr:street": "West 1500 North",
+            "baby_feeding": "room",
+            "denomination": "latter-day_saints",
+            "service_times": "Su 09:00",
+            "internet_access": "wlan",
+            "addr:housenumber": 2261,
+            "air_conditioning": "yes"
+          }
+        },
+        "website": "https://local.churchofjesuschrist.org/en/us/ut/lehi/2261-west-1500-north?utm_source=gmb&utm_medium=yext&y_source=1_NjcwOTA4NzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+        "contact": {
+          "phone": "+18018993768"
+        },
+        "facilities": {
+          "internet_access": true,
+          "air_conditioning": true
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "latter-day_saints"
+        },
+        "place_id": "511b0aadbcaef85bc059c045f58bed334440f00102f9018fdda64c0000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.88566510103594,
+          40.40568685032076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Springville",
+        "postcode": "84664",
+        "street": "Canyon Road",
+        "iso3166_2": "US-UT",
+        "lon": -111.5854806933637,
+        "lat": 40.159743899999995,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, Canyon Road, Springville, UT 84664, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "Canyon Road, Springville, UT 84664, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_id": 150841225,
+            "amenity": "place_of_worship",
+            "building": "church",
+            "osm_type": "w",
+            "religion": "christian",
+            "wikidata": "Q42504",
+            "denomination": "mormon"
+          }
+        },
+        "wiki_and_media": {
+          "wikidata": "Q42504"
+        },
+        "building": {
+          "type": "church"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "mormon"
+        },
+        "place_id": "51ef9b038478e55bc059e0bcf57c72144440f00102f90189a7fd080000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.58548069336369,
+          40.15974390028873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Springville",
+        "postcode": "84663",
+        "street": "East Center Street",
+        "iso3166_2": "US-UT",
+        "lon": -111.60455692205116,
+        "lat": 40.167173399999996,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, East Center Street, Springville, UT 84663, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "East Center Street, Springville, UT 84663, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_id": 150853736,
+            "amenity": "place_of_worship",
+            "building": "church",
+            "osm_type": "w",
+            "religion": "christian",
+            "wikidata": "Q42504",
+            "check_date": "2023-10-15",
+            "denomination": "mormon"
+          }
+        },
+        "wiki_and_media": {
+          "wikidata": "Q42504"
+        },
+        "building": {
+          "type": "church"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "mormon"
+        },
+        "place_id": "51ee31840fb1e65bc059b3801ff065154440f00102f90168d8fd080000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.60455692205116,
+          40.16717340028972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Lehi",
+        "postcode": "84043",
+        "street": "West 3070 North",
+        "housenumber": "890",
+        "iso3166_2": "US-UT",
+        "lon": -111.8634690999999,
+        "lat": 40.426984250000004,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, 890 West 3070 North, Lehi, UT 84043, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "890 West 3070 North, Lehi, UT 84043, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity",
+          "wheelchair",
+          "wheelchair.yes"
+        ],
+        "details": [
+          "details.contact",
+          "details.facilities",
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "phone": "+1 801-768-1620",
+            "osm_id": 255969118,
+            "amenity": "place_of_worship",
+            "building": "church",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "Lehi",
+            "addr:state": "UT",
+            "wheelchair": "yes",
+            "addr:street": "West 3070 North",
+            "denomination": "latter_day_saints",
+            "addr:postcode": 84043,
+            "addr:housenumber": 890
+          }
+        },
+        "contact": {
+          "phone": "+1 801-768-1620"
+        },
+        "facilities": {
+          "wheelchair": true
+        },
+        "building": {
+          "type": "church"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "latter_day_saints"
+        },
+        "place_id": "51ca66e61343f75bc059f0857f6ba7364440f00102f9015ec7410f0000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.86346909999989,
+          40.42698425032347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Orem",
+        "hamlet": "Snow",
+        "postcode": "84058",
+        "street": "200 West",
+        "iso3166_2": "US-UT",
+        "lon": -111.69981101138839,
+        "lat": 40.28491445,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, 200 West, Orem, UT 84058, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "200 West, Orem, UT 84058, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.facilities",
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_id": 316834680,
+            "amenity": "place_of_worship",
+            "website": "https://www.churchofjesuschrist.org/",
+            "building": "church",
+            "osm_type": "w",
+            "religion": "christian",
+            "description": "Stonewood 2, Hidden Meadows Branch",
+            "baby_feeding": "room",
+            "denomination": "mormon",
+            "service_times": "Su 09:00,10:30",
+            "air_conditioning": "yes"
+          }
+        },
+        "website": "https://www.churchofjesuschrist.org/",
+        "description": "Stonewood 2, Hidden Meadows Branch",
+        "facilities": {
+          "air_conditioning": true
+        },
+        "building": {
+          "type": "church"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "mormon"
+        },
+        "place_id": "51cdd21fb4c9ec5bc059fc1ba31378244440f00102f9017883e2120000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.69981101138838,
+          40.284914450305195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Spanish Fork",
+        "postcode": "84660",
+        "street": "East 100 South",
+        "housenumber": "2188",
+        "iso3166_2": "US-UT",
+        "lon": -111.6176484681763,
+        "lat": 40.10732705,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, 2188 East 100 South, Spanish Fork, UT 84660, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "2188 East 100 South, Spanish Fork, UT 84660, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_id": 341941943,
+            "amenity": "place_of_worship",
+            "website": "https://www.lds.org",
+            "building": "yes",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "Spanish Fork",
+            "addr:state": "UT",
+            "addr:street": "East 100 South",
+            "denomination": "mormon",
+            "addr:postcode": 84660,
+            "addr:housenumber": 2188
+          }
+        },
+        "website": "https://www.lds.org",
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "mormon"
+        },
+        "place_id": "5178cf708d87e75bc059d8778de4bc0d4440f00102f901b79e61140000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6176484681763,
+          40.107327050281754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Alpine",
+        "postcode": "84004",
+        "street": "North 100 East",
+        "housenumber": "165",
+        "iso3166_2": "US-UT",
+        "lon": -111.77700423266491,
+        "lat": 40.45507165,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, 165 North 100 East, Alpine, UT 84004, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "165 North 100 East, Alpine, UT 84004, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "ele": 1512,
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_id": 342620226,
+            "amenity": "place_of_worship",
+            "building": "church",
+            "osm_type": "w",
+            "religion": "christian",
+            "wikidata": "Q4735498",
+            "addr:city": "Alpine",
+            "wikipedia": "en:Alpine LDS Church Meetinghouse",
+            "addr:state": "UT",
+            "addr:street": "North 100 East",
+            "denomination": "mormon",
+            "addr:postcode": 84004,
+            "addr:housenumber": 165
+          }
+        },
+        "ele": 1512,
+        "wiki_and_media": {
+          "wikidata": "Q4735498",
+          "wikipedia": "en:Alpine LDS Church Meetinghouse"
+        },
+        "building": {
+          "type": "church"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "mormon"
+        },
+        "place_id": "518e09f66fbaf15bc059e6beafc93f3a4440f00102f90142f86b140000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7770042326649,
+          40.45507165032704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Spanish Fork",
+        "hamlet": "Sutro",
+        "postcode": "85203",
+        "street": "East Canyon Road",
+        "housenumber": "1455",
+        "iso3166_2": "US-UT",
+        "lon": -111.6190586,
+        "lat": 40.0963537,
+        "state_code": "UT",
+        "formatted": "The Church of Jesus Christ of Latter-day Saints, 1455 East Canyon Road, Spanish Fork, UT 85203, United States of America",
+        "address_line1": "The Church of Jesus Christ of Latter-day Saints",
+        "address_line2": "1455 East Canyon Road, Spanish Fork, UT 85203, United States of America",
+        "categories": [
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity"
+        ],
+        "details": [
+          "details",
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "The Church of Jesus Christ of Latter-day Saints",
+            "osm_id": 445494386,
+            "amenity": "place_of_worship",
+            "website": "https://www.churchofjesuschrist.org/",
+            "osm_type": "n",
+            "religion": "christian",
+            "addr:city": "Mesa",
+            "addr:state": "UT",
+            "addr:street": "North Harris Drive",
+            "denomination": "mormon",
+            "addr:postcode": 85203,
+            "addr:housenumber": 1455
+          }
+        },
+        "website": "https://www.churchofjesuschrist.org/",
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "mormon"
+        },
+        "place_id": "51ae53f6a79ee75bc059b5c66b51550c4440f00103f90172b48d1a0000000092032f54686520436875726368206f66204a6573757320436872697374206f66204c61747465722d646179205361696e7473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.61905859999999,
+          40.09635370028028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Provo Bible Church",
+        "country": "United States",
+        "country_code": "us",
+        "state": "Utah",
+        "county": "Utah County",
+        "city": "Provo",
+        "postcode": "84601",
+        "district": "Sunset",
+        "street": "West 1150 South",
+        "housenumber": "1449",
+        "iso3166_2": "US-UT",
+        "lon": -111.6835216771828,
+        "lat": 40.218070049999994,
+        "state_code": "UT",
+        "formatted": "Provo Bible Church, 1449 West 1150 South, Provo, UT 84601, United States of America",
+        "address_line1": "Provo Bible Church",
+        "address_line2": "1449 West 1150 South, Provo, UT 84601, United States of America",
+        "categories": [
+          "building",
+          "building.place_of_worship",
+          "internet_access",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity",
+          "wheelchair",
+          "wheelchair.yes"
+        ],
+        "details": [
+          "details.contact",
+          "details.facilities",
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "\u00a9 OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Provo Bible Church",
+            "email": "dgstolarski@provobible.com",
+            "phone": "+1 801 373 8272",
+            "osm_id": 700241877,
+            "amenity": "place_of_worship",
+            "building": "yes",
+            "osm_type": "w",
+            "religion": "christian",
+            "addr:city": "Provo",
+            "addr:state": "UT",
+            "wheelchair": "yes",
+            "addr:street": "West 1150 South",
+            "denomination": "protestant",
+            "addr:postcode": 84601,
+            "service_times": "Su 09:30",
+            "internet_access": "wlan",
+            "addr:housenumber": 1449,
+            "air_conditioning": "yes"
+          }
+        },
+        "contact": {
+          "phone": "+1 801 373 8272",
+          "email": "dgstolarski@provobible.com"
+        },
+        "facilities": {
+          "internet_access": true,
+          "wheelchair": true,
+          "air_conditioning": true
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "protestant"
+        },
+        "place_id": "51dc66b4d1beeb5bc05952212bb8e91b4440f00102f901d5d7bc290000000092031250726f766f204269626c6520436875726368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6835216771828,
+          40.21807005029645
+        ]
+      }
+    }
+  ]
+}
