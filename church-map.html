@@ -179,23 +179,73 @@ function addPopulationLayer(){
         else map.removeLayer(popLayer);
       });
 
-        // Add population density color legend
-        const popLegend = document.createElement('div');
-        popLegend.className = 'pop-density-legend';
-        popLegend.style.marginTop = '8px';
-        popLegend.style.fontSize = '13px';
-        popLegend.innerHTML = `
-          <div style="margin-bottom:4px;font-weight:bold;">Population Density (per km²)</div>
-          <div><span style="background:#800026;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> > 2000</div>
-          <div><span style="background:#BD0026;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 1001–2000</div>
-          <div><span style="background:#E31A1C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 501–1000</div>
-          <div><span style="background:#FC4E2A;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 201–500</div>
-          <div><span style="background:#FD8D3C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 101–200</div>
-          <div><span style="background:#FEB24C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 51–100</div>
-          <div><span style="background:#FED976;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 11–50</div>
-          <div><span style="background:#FFEDA0;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 0–10</div>
-        `;
-        legendControl.appendChild(popLegend);
+      // Add population density color legend
+      const popLegend = document.createElement('div');
+      popLegend.className = 'pop-density-legend';
+      popLegend.style.marginTop = '8px';
+      popLegend.style.fontSize = '13px';
+      popLegend.innerHTML = `
+        <div style="margin-bottom:4px;font-weight:bold;">Population Density (per km²)</div>
+        <div><span style="background:#800026;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> > 2000</div>
+        <div><span style="background:#BD0026;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 1001–2000</div>
+        <div><span style="background:#E31A1C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 501–1000</div>
+        <div><span style="background:#FC4E2A;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 201–500</div>
+        <div><span style="background:#FD8D3C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 101–200</div>
+        <div><span style="background:#FEB24C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 51–100</div>
+        <div><span style="background:#FED976;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 11–50</div>
+        <div><span style="background:#FFEDA0;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 0–10</div>
+        <div id="pop-legend-total" style="margin-top:8px;font-weight:bold;color:#222">Visible Population: —</div>
+      `;
+      legendControl.appendChild(popLegend);
+
+      // Function to update visible population
+      function updateVisiblePopulation() {
+        if (!popLayer || typeof popLayer.getLayers !== 'function') {
+          document.getElementById('pop-legend-total').innerText = 'Visible Population: —';
+          return;
+        }
+        const bounds = map.getBounds();
+        let total = 0;
+        popLayer.eachLayer(function(layer) {
+          if (layer.getLatLng) return; // skip point layers
+          const feature = layer.feature;
+          if (!feature || !feature.geometry) return;
+          // Only count polygons that intersect the map bounds
+          try {
+            const geojson = feature;
+            // Simple bbox check for polygons
+            const coords = geojson.geometry.coordinates;
+            if (!coords) return;
+            // For MultiPolygon or Polygon
+            let inView = false;
+            function checkPoly(poly) {
+              for (const ring of poly) {
+                for (const pt of ring) {
+                  const lat = pt[1], lng = pt[0];
+                  if (bounds.contains([lat, lng])) {
+                    inView = true;
+                    return;
+                  }
+                }
+              }
+            }
+            if (geojson.geometry.type === 'Polygon') {
+              checkPoly(coords);
+            } else if (geojson.geometry.type === 'MultiPolygon') {
+              for (const poly of coords) checkPoly(poly);
+            }
+            if (inView) {
+              const pop = layer.feature.properties && layer.feature.properties.population;
+              if (typeof pop === 'number') total += pop;
+            }
+          } catch(e) {}
+        });
+        document.getElementById('pop-legend-total').innerText = 'Visible Population: ' + total.toLocaleString();
+      }
+      // Update on map move/zoom
+      map.on('moveend zoomend', updateVisiblePopulation);
+      // Initial call
+      setTimeout(updateVisiblePopulation, 500);
     }
 
   }).catch(err=>{
