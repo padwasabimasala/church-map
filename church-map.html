@@ -28,7 +28,9 @@ const denomColors = {
   "Presbyterian": "#00796b",
   "Protestant": "#388e3c",
   "Evangelical": "#8bc34a",
+  "Episcopal": "#3949ab",
   "Temple": "#6a1b9a",
+  "Iglesia": "#ffb300",
   "Other": "#607d8b"
 };
 
@@ -57,20 +59,36 @@ function createColoredIcon(color, shape = 'circle'){
 }
 
 // Normalise raw denomination values to one of our denomColors keys
-function denomKeyFromRaw(raw){
-  if(!raw) return 'Other';
-  const s = String(raw).toLowerCase();
-  if(s.includes('catholic') || s.includes('roman')) return 'Catholic';
-  if(s.includes('mormon') || s.includes('latter') || s.includes('lds')) return 'LDS';
-  if(s.includes('baptist')) return 'Baptist';
-  if(s.includes('methodist')) return 'Methodist';
-  if(s.includes('pentec')) return 'Pentecostal';
-  if(s.includes('orthodox')) return 'Orthodox';
-  if(s.includes('presbyterian')) return 'Presbyterian';
-  if(s.includes('protestant')) return 'Protestant';
-  if(s.includes('evangel')) return 'Evangelical';
-  if(s.includes('temple')) return 'Temple';
-  if(s.includes('non') || s.includes('nondenom') || s.includes('non-denom')) return 'Non-denominational';
+function denomKeyFromRaw(rawDenom, rawName) {
+  // First, try denomination string
+  if (!rawDenom) rawDenom = '';
+  const s = String(rawDenom).toLowerCase();
+  if (s.includes('catholic') || s.includes('roman')) return 'Catholic';
+  if (s.includes('mormon') || s.includes('latter') || s.includes('lds') || s.includes('temple')) return 'LDS';
+  if (s.includes('baptist')) return 'Baptist';
+  if (s.includes('methodist')) return 'Methodist';
+  if (s.includes('pentec')) return 'Pentecostal';
+  if (s.includes('orthodox')) return 'Orthodox';
+  if (s.includes('presbyterian')) return 'Presbyterian';
+  if (s.includes('protestant')) return 'Protestant';
+  if (s.includes('episcopal')) return 'Episcopal';
+  if (s.includes('iglesia')) return 'Iglesia';
+  if (s.includes('non') || s.includes('nondenom') || s.includes('non-denom')) return 'Non-denominational';
+  // If denomination is 'Other', try to match by name
+  if (rawName) {
+    const n = String(rawName).toLowerCase();
+    if (n.includes('catholic') || n.includes('roman')) return 'Catholic';
+    if (n.includes('mormon') || n.includes('latter') || n.includes('lds') || n.includes('temple')) return 'LDS';
+    if (n.includes('baptist')) return 'Baptist';
+    if (n.includes('methodist')) return 'Methodist';
+    if (n.includes('pentec')) return 'Pentecostal';
+    if (n.includes('orthodox')) return 'Orthodox';
+    if (n.includes('presbyterian')) return 'Presbyterian';
+    if (n.includes('protestant')) return 'Protestant';
+    if (n.includes('episcopal')) return 'Episcopal';
+    if (n.includes('iglesia')) return 'Iglesia';
+    if (n.includes('non') || n.includes('nondenom') || n.includes('non-denom')) return 'Non-denominational';
+  }
   return 'Other';
 }
 
@@ -84,12 +102,13 @@ fetch('churches.geojson').then(r=>r.json()).then(data=>{
   const geo = L.geoJSON(data, {
     pointToLayer: function(feature, latlng){
       const p = feature.properties || {};
+        const name = p.name || '';
       // our generator flattens denomination into 'place_of_worship.denomination' sometimes
       const rawDenom = p['place_of_worship.denomination'] || p.denomination || p['denomination'] || '';
       // detect building type for special shapes (e.g., temples)
       const rawBuilding = p['building'] || (feature.properties && feature.properties['building']) || '';
       const buildingType = rawBuilding && typeof rawBuilding === 'object' ? rawBuilding.type || '' : rawBuilding || '';
-      const key = denomKeyFromRaw(rawDenom);
+      const key = denomKeyFromRaw(rawDenom, name);
       const color = denomColors[key] || denomColors['Other'];
       const shape = (String(buildingType).toLowerCase().includes('temple') || String(rawDenom).toLowerCase().includes('temple')) ? 'square' : 'circle';
       const marker = L.marker(latlng, {icon: createColoredIcon(color, shape)});
@@ -105,7 +124,7 @@ fetch('churches.geojson').then(r=>r.json()).then(data=>{
       const phone = p.phone || p.contact || '';
       const website = p.website ? `<a href="${p.website}" target="_blank">website</a>` : '';
       const rawDenom = p['place_of_worship.denomination'] || p.denomination || p['denomination'] || '';
-      const denom = denomKeyFromRaw(rawDenom);
+      const denom = denomKeyFromRaw(rawDenom, name);
       const popup = `<strong>${name}</strong><br>${addr}${phone?'<br>Phone: '+phone:''}${website?'<br>'+website:''}<br><em>${denom}</em>`;
       layer.bindPopup(popup);
     }
