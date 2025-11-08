@@ -21,15 +21,12 @@ const denomColors = {
   "LDS": "#9c27b0",
   "Catholic": "#d32f2f",
   "Baptist": "#1976d2",
-  "Methodist": "#ff9800",
   "Pentecostal": "#f44336",
-  "Orthodox": "#3f51b5",
   "Non-denominational": "#4caf50",
   "Presbyterian": "#00796b",
-  "Protestant": "#388e3c",
-  "Evangelical": "#8bc34a",
   "Episcopal": "#3949ab",
-  "Temple": "#6a1b9a",
+  "Adventist": "#009688",
+  "EV Free": "#00bcd4",
   "Iglesia": "#ffb300",
   "Other": "#607d8b"
 };
@@ -66,28 +63,34 @@ function denomKeyFromRaw(rawDenom, rawName) {
   if (s.includes('catholic') || s.includes('roman')) return 'Catholic';
   if (s.includes('mormon') || s.includes('latter') || s.includes('lds') || s.includes('temple')) return 'LDS';
   if (s.includes('baptist')) return 'Baptist';
-  if (s.includes('methodist')) return 'Methodist';
   if (s.includes('pentec')) return 'Pentecostal';
-  if (s.includes('orthodox')) return 'Orthodox';
   if (s.includes('presbyterian')) return 'Presbyterian';
-  if (s.includes('protestant')) return 'Protestant';
   if (s.includes('episcopal')) return 'Episcopal';
+  if (s.includes('adventist')) return 'Adventist';
+  if (s.includes('ev free')) return 'EV Free';
   if (s.includes('iglesia')) return 'Iglesia';
   if (s.includes('non') || s.includes('nondenom') || s.includes('non-denom')) return 'Non-denominational';
   // If denomination is 'Other', try to match by name
+  if (rawName === undefined || rawName === null || String(rawName).trim() === "") {
+    return "LDS";
+  }
   if (rawName) {
     const n = String(rawName).toLowerCase();
-    if (n.includes('catholic') || n.includes('roman')) return 'Catholic';
-    if (n.includes('mormon') || n.includes('latter') || n.includes('lds') || n.includes('temple')) return 'LDS';
-    if (n.includes('baptist')) return 'Baptist';
-    if (n.includes('methodist')) return 'Methodist';
-    if (n.includes('pentec')) return 'Pentecostal';
-    if (n.includes('orthodox')) return 'Orthodox';
-    if (n.includes('presbyterian')) return 'Presbyterian';
-    if (n.includes('protestant')) return 'Protestant';
-    if (n.includes('episcopal')) return 'Episcopal';
-    if (n.includes('iglesia')) return 'Iglesia';
-    if (n.includes('non') || n.includes('nondenom') || n.includes('non-denom')) return 'Non-denominational';
+    if (n.includes('maranatha christian')) return 'Non-denominational';
+    if (n.includes('the rock')) return 'Non-denominational';
+    if (n.includes('centerpoint church')) return 'EV Free';
+  if (n.includes('catholic') || n.includes('roman')) return 'Catholic';
+  if (n.includes('mormon') || n.includes('latter') || n.includes('lds') || n.includes('temple')) return 'LDS';
+  if (n.includes('baptist')) return 'Baptist';
+  if (n.includes('pentec')) return 'Pentecostal';
+  if (n.includes('presbyterian')) return 'Presbyterian';
+  if (n.includes('episcopal')) return 'Episcopal';
+  if (n.includes('adventist')) return 'Adventist';
+  if (n.includes('ev free')) return 'EV Free';
+  if (n.includes('iglesia')) return 'Iglesia';
+  if (n.includes('bible')) return 'Non-denominational';
+  if (n.includes('community')) return 'Non-denominational';
+  if (n.includes('non') || n.includes('nondenom') || n.includes('non-denom')) return 'Non-denominational';
   }
   return 'Other';
 }
@@ -208,15 +211,16 @@ function addLegend(markers, denomMarkers){
   const legend = L.control({position:'topright'});
   legend.onAdd = function() {
     const div = L.DomUtil.create('div','info legend');
-    div.style.maxHeight = '60vh';
+  div.style.maxHeight = '80vh';
     div.style.overflowY = 'auto';
     for (const k of Object.keys(denomColors)) {
       const color = denomColors[k];
+      const count = denomMarkers[k] ? denomMarkers[k].length : 0;
       const item = document.createElement('div');
       item.className = 'legend-item';
       item.style.cursor = 'pointer';
       item.style.marginBottom = '6px';
-      item.innerHTML = `<i data-key="${k}" style="background:${color};width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #222;vertical-align:middle"></i><span style="vertical-align:middle">${k}</span>`;
+      item.innerHTML = `<i data-key="${k}" style="background:${color};width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #222;vertical-align:middle"></i><span style="vertical-align:middle">${k}</span> <span style="color:#444;font-size:12px;margin-left:4px">(${count})</span>`;
       // default visible
       item.dataset.visible = '1';
 
