@@ -116,6 +116,74 @@ fetch('churches.geojson').then(r=>r.json()).then(data=>{
   addLegend(markers, denomMarkers);
 });
 
+// Population density choropleth layer (populated by fetch_census_data.py)
+let popLayer = null;
+function addPopulationLayer(){
+  fetch('tracts_population.geojson').then(r=>r.json()).then(data=>{
+    // color scale (people per km2)
+    function getColor(d){
+      return d > 2000 ? '#800026' :
+             d > 1000 ? '#BD0026' :
+             d > 500  ? '#E31A1C' :
+             d > 200  ? '#FC4E2A' :
+             d > 100  ? '#FD8D3C' :
+             d > 50   ? '#FEB24C' :
+             d > 10   ? '#FED976' :
+                        '#FFEDA0';
+    }
+
+    function style(feature){
+      const d = feature.properties && feature.properties.density_per_km2 ? feature.properties.density_per_km2 : 0;
+      return {fillColor: getColor(d), weight: 1, opacity: 1, color: 'white', fillOpacity: 0.7};
+    }
+
+    popLayer = L.geoJSON(data, {style: style, onEachFeature: function(f, layer){
+      const p = f.properties || {};
+      const name = p.NAME || p.GEOID || '';
+      const popup = `<strong>${name}</strong><br>Population: ${p.population||0}<br>Density: ${p.density_per_km2?p.density_per_km2.toFixed(1):'—'} per km²`;
+      layer.bindPopup(popup);
+    }});
+
+    // Add a simple toggle control to the map (checkbox in legend)
+    const legendControl = document.querySelector('.legend');
+    if (legendControl){
+      const wrapper = document.createElement('div');
+      wrapper.style.marginTop = '8px';
+      wrapper.innerHTML = `<label style="font-size:13px;display:flex;align-items:center"><input id="pop-toggle" type="checkbox" style="margin-right:6px"> Show population density</label>`;
+      legendControl.appendChild(wrapper);
+      const cb = document.getElementById('pop-toggle');
+      cb.addEventListener('change', function(e){
+        if (this.checked) popLayer.addTo(map);
+        else map.removeLayer(popLayer);
+      });
+
+        // Add population density color legend
+        const popLegend = document.createElement('div');
+        popLegend.className = 'pop-density-legend';
+        popLegend.style.marginTop = '8px';
+        popLegend.style.fontSize = '13px';
+        popLegend.innerHTML = `
+          <div style="margin-bottom:4px;font-weight:bold;">Population Density (per km²)</div>
+          <div><span style="background:#800026;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> > 2000</div>
+          <div><span style="background:#BD0026;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 1001–2000</div>
+          <div><span style="background:#E31A1C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 501–1000</div>
+          <div><span style="background:#FC4E2A;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 201–500</div>
+          <div><span style="background:#FD8D3C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 101–200</div>
+          <div><span style="background:#FEB24C;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 51–100</div>
+          <div><span style="background:#FED976;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 11–50</div>
+          <div><span style="background:#FFEDA0;width:18px;height:12px;display:inline-block;margin-right:6px;border:1px solid #222;"></span> 0–10</div>
+        `;
+        legendControl.appendChild(popLegend);
+    }
+
+  }).catch(err=>{
+    console.warn('Population GeoJSON not found or failed to load:', err);
+  });
+}
+
+// try to load if file exists (best-effort)
+fetch('tracts_population.geojson', {method: 'HEAD'}).then(r=>{ if (r.ok) addPopulationLayer(); }).catch(()=>{});
+
 // Simple legend
 function addLegend(markers, denomMarkers){
   const legend = L.control({position:'topright'});
